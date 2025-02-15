@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
 import json
 import os
-from time import time, sleep
-from datetime import timedelta
+from time import time
 
 app = Flask(__name__)
+CORS(app)  # Включаем CORS для всех запросов
 
 # Путь к данным
 DATA_FILE_PATH = "./data/data.json"
